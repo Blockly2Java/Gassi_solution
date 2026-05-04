@@ -1,6 +1,6 @@
 /**
-Erstelle dein Programm über Blockly und
-klicke auf 'Play', um es auszuführen!
+// Erstelle dein Programm über Blockly und
+// klicke auf 'Play', um es auszuführen!
 */
 
 public class Hund { 
@@ -27,7 +27,7 @@ public class Hund {
                 distanz = distanz - 1;
             }
             double restX = x - getX();
-            double restY = y - getX();
+            double restY = y - getY();
             group.move(restX, restY);
         }
     }
@@ -37,7 +37,7 @@ public class Hund {
     }
 
     public double getY() {
-        return group.getCenterX();
+        return group.getCenterY();
     }
 
     public Hund() {

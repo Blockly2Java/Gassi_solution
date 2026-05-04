@@ -1225,13 +1225,13 @@
         "inputs": {
           "RETURN": {
             "block": {
-              "type": "gfx_get_x",
-              "id": "pNP=v%23a8!gwIn_sZP2",
+              "type": "gfx_get_y",
+              "id": "ele30#$Bz?$0ZN@Zd,ob",
               "inputs": {
                 "OBJ": {
                   "shadow": {
                     "type": "java_local_var_get",
-                    "id": "oN@ZUjkD3To_KQ,a@^`2",
+                    "id": "U2y`I|.uYE[RA@@G?b{]",
                     "fields": {
                       "VAR": {
                         "id": "xbiy=^.M/=4;bK7DvVIQ",
@@ -1242,7 +1242,7 @@
                   },
                   "block": {
                     "type": "java_normal_attr_get",
-                    "id": "[0q]qT{:VIiYiyUM{H8?",
+                    "id": "9^NkKlHpO|;s3%A;nZ;^",
                     "fields": {
                       "VAR": {
                         "id": "u#lMY?DFq(_gA2|BH`@M"
@@ -1912,8 +1912,8 @@
                                                           },
                                                           "block": {
                                                             "type": "java_method_call_return",
-                                                            "id": "/0;=F(TM:G.CX-YZ:zlm",
-                                                            "extraState": "<mutation xmlns=\"http://www.w3.org/1999/xhtml\" method=\"getX\" args=\"0\"></mutation>"
+                                                            "id": "#wzu^lihij!H(UIg_B5^",
+                                                            "extraState": "<mutation xmlns=\"http://www.w3.org/1999/xhtml\" method=\"getY\" args=\"0\"></mutation>"
                                                           }
                                                         }
                                                       }
