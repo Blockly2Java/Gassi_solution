@@ -15,7 +15,7 @@ public class Hund {
 
     public void zuPositionLaufen(double x, double y) {
         double diffX = x - getX();
-        double diffY = y - getX();
+        double diffY = y - getY();
         double distanz = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
 
         if (distanz > 1) {
