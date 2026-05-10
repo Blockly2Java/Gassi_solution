@@ -10,23 +10,77 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+        <groupId>b2j</groupId>
+        <artifactId>graphics</artifactId>
+        <version>[0.1.0,)</version>
+        </dependency>
+    </dependencies>
     <build>
-        <sourceDirectory>${project.basedir}/src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/resources</directory>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
-            </plugin>
-        </plugins>
+    <sourceDirectory>${project.basedir}/src</sourceDirectory>
+    <plugins>
+        <!-- 1. Den temporären Wrapper generieren -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <configuration>
+                        <target>
+                            <!-- Ordnerstruktur im target-Verzeichnis erstellen -->
+                            <mkdir dir="${project.build.directory}/generated-sources/wrapper/"/>
+                            
+                            <!-- Die temporäre Java-Datei schreiben -->
+                            <echo file="${project.build.directory}/generated-sources/wrapper/TempWrapper.java">
+                                public class TempWrapper {
+                                    public static void main(String[] args) {
+                                        Main.main();
+                                    }
+                                }
+                            </echo>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+        <!-- 2. Maven mitteilen, dass es die neue Datei kompilieren soll -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.3.0</version>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>add-source</goal>
+                    </goals>
+                    <configuration>
+                        <sources>
+                            <!-- Sagt Maven: "Hier liegt auch noch Code zum Kompilieren!" -->
+                            <source>${project.build.directory}/generated-sources/wrapper</source>
+                        </sources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
+        <!-- 3. Den temporären Wrapper ausführen -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.1.1</version>
+            <configuration>
+                <!-- Zielt jetzt auf den generierten Wrapper ab -->
+                <mainClass>TempWrapper</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
     </build>
 </project>
