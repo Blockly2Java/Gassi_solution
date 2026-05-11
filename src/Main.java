@@ -1,8 +1,3 @@
-/**
-// Erstelle dein Programm über Blockly und
-// klicke auf 'Play', um es auszuführen!
-*/
-
 public class Main { 
     /**
      * Das Hauptprogramm (main-Methode):
@@ -14,10 +9,12 @@ public class Main {
      * gestartet, wenn du auf 'Play' drückst.
      */
     public static void main() {
+        System.out.println(">>> Main.main()");
         World world = new World(1600, 1600);
         Hund hund = new Hund();
         Mensch mensch = new Mensch(hund);
         mensch.gassiGehen();
+        System.out.println("<<< Main.main()");
     }
 
 } /*// main()-Methode starten
