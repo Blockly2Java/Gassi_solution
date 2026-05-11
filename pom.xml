@@ -12,7 +12,7 @@
     </properties>
     <dependencies>
         <dependency>
-        <groupId>b2j</groupId>
+        <groupId>de.blockly2java</groupId>
         <artifactId>graphics</artifactId>
         <version>[0.1.0,)</version>
         </dependency>
@@ -77,9 +77,16 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.1.1</version>
             <configuration>
-                <!-- Zielt jetzt auf den generierten Wrapper ab -->
                 <mainClass>TempWrapper</mainClass>
             </configuration>
+            <executions>
+                <execution>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                </execution>
+            </executions>
         </plugin>
     </plugins>
     </build>
