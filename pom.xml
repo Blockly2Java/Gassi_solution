@@ -19,6 +19,7 @@
     </dependencies>
     <build>
     <sourceDirectory>${project.basedir}/src</sourceDirectory>
+    <defaultGoal>clean compile exec:java</defaultGoal>
     <plugins>
         <!-- 1. Den temporären Wrapper generieren -->
         <plugin>
