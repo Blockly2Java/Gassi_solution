@@ -61,7 +61,7 @@ Hund --> Group : -group
 ## TODO - Der Spaziergang
 - [task][`Mensch.getX()`, `Mensch.getY()`](testMenschGetX,testMenschGetY) Damit der Hund später nachschauen kann, wo der Mensch ist, brauchen wir Getter-Methoden für die Koordinaten des Menschen. Tipp: Nutze die Koordinaten der `grafikGruppe`.
 - [task][`Hund.beiFuss(Mensch herrchen)`](testBeiFuss) — soll den Hund veranlassen, zur Position des Mensch-Objekts zu laufen, das als Parameter übergeben wird (Tipp: Nutze `zuPositionLaufen(double x, double y)`).
-- [task][`Mensch.gassiGehen()`](testGassiGehen) soll den Menschen zu einem zufälligen Punkt bewegen (Empfehlung: zufällige Bewegung zwischen 500 und 1400 Einheiten pro Koordinaten-Richtung vom Startpunkt aus) und anschließend den Hund rufen.
+- [task][`Mensch.gassiGehen()`](testGassiGehen) soll den Menschen zu einem zufälligen Punkt bewegen (Empfehlung: zufällige Bewegung zwischen 300 und 800 Einheiten pro Koordinaten-Richtung vom Startpunkt aus) und anschließend den Hund rufen.
 - [task][`Mensch.hundRufen()`](testHundRufen) — soll den Hund zum Menschen rufen (nutze `beiFuss` und übergib ein geeignetes Mensch-Objekt als Parameter).
 
 

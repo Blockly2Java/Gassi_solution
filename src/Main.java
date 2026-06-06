@@ -1,4 +1,4 @@
-public class Main { 
+public class Main {
     /**
      * Das Hauptprogramm (main-Methode):
      * Alles, was ausgeführt werden soll,
@@ -10,12 +10,14 @@ public class Main {
      */
     public static void main() {
         System.out.println(">>> Main.main()");
-        World world = new World(1600, 1600);
+        World world = new World(1000, 1000);
         Hund hund = new Hund();
         Mensch mensch = new Mensch(hund);
         mensch.gassiGehen();
         System.out.println("<<< Main.main()");
     }
 
-} /*// main()-Methode starten
-Main.main();*/
+} /*
+   * // main()-Methode starten
+   * Main.main();
+   */
