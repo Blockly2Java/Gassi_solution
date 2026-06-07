@@ -1,25 +1,24 @@
 /**
-// Erstelle dein Programm über Blockly und
-// klicke auf 'Play', um es auszuführen!
-*/
+ * // Erstelle dein Programm über Blockly und
+ * // klicke auf 'Play', um es auszuführen!
+ */
 
-public class Mensch { 
+public class Mensch {
     private Group grafikGruppe;
     private Hund meinHund;
 
-
     public static int mathRandomInt(int a, int b) {
-            if (a > b) {
-                // Swap a and b to ensure a is smaller.
-                int c = a;
-                a = b;
-                b = c;
-            }
-            return (int) (Math.floor(Math.random() * (b - a + 1)) + a);
+        if (a > b) {
+            // Swap a and b to ensure a is smaller.
+            int c = a;
+            a = b;
+            b = c;
         }
+        return (int) (Math.floor(Math.random() * (b - a + 1)) + a);
+    }
 
     public void gassiGehen() {
-        grafikGruppe.move(mathRandomInt(500, 1500), mathRandomInt(500, 1500));
+        grafikGruppe.move(mathRandomInt(300, 700), mathRandomInt(300, 700));
         hundRufen();
     }
 
